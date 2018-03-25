@@ -2,6 +2,7 @@ import QtQuick 2.0
 
 Rectangle {
     color: "#008000"
+    visible: true
     implicitWidth: 240/3*30
     implicitHeight: 330/3*16
 
@@ -9,16 +10,23 @@ Rectangle {
 
     Text {
         id: won
-        anchors.fill:parent
+        anchors.centerIn:parent
         visible: false
         text: "Congratulations"
+        verticalAlignment: Text.AlignTop
+        horizontalAlignment: Text.AlignLeft
+        clip: false
+        font.pointSize: 60
+        color: "#0500ff"
     }
 
     Text {
         id: lost
-        anchors.fill:parent
+        anchors.centerIn:parent
         visible: false
         text: "You lost"
+        font.pointSize: 60
+        color: "red"
     }
 
     onGameStateChanged: {

@@ -9,7 +9,7 @@ ApplicationWindow {
     width: layout.implicitWidth
     height: layout.implicitHeight
 
-    //@bug Is not displayed? Why?
+    //@bug Menu is not displayed? Why?
     menuBar: MenuBar {
         Menu {
             title: "File"
@@ -31,7 +31,6 @@ ApplicationWindow {
             id: newGame
             text: "New Game"
             onClicked: {
-                console.log(gameBoard.centeredGame)
                 Logic.createBoard(gameBoard)
             }
         }
