@@ -6,7 +6,7 @@ Rectangle {
     implicitWidth: 240/3*15+20
     implicitHeight: 330/3*8+20
 
-    property int gameState:0
+    property int gameState:0        
 
     Text {
         id: won
@@ -18,7 +18,20 @@ Rectangle {
         clip: false
         font.pointSize: 60
         color: "#0500ff"
+
+        Behavior on visible {
+            SequentialAnimation {
+               // PropertyAction { target: won; property: "visible"; value: visible }
+                ParallelAnimation {
+                    NumberAnimation { target: won; property: "opacity"; from: 0.; to: 1.0; duration: 1000 }
+                    NumberAnimation { target: won; property: "font.pointSize"; from: 1.; to: 60.0; duration: 1000}
+                    NumberAnimation { target: won; property: "rotation"; from: 0.; to: 360; duration: 1000}
+                }
+            }
+        }
     }
+
+
 
     Text {
         id: lost
@@ -27,6 +40,17 @@ Rectangle {
         text: "You lost"
         font.pointSize: 60
         color: "red"
+        Behavior on visible {
+            SequentialAnimation {
+               // PropertyAction { target: won; property: "visible"; value: visible }
+                ParallelAnimation {
+                    NumberAnimation { target: lost; property: "opacity"; from: 0.; to: 1.0; duration: 1000 }
+                    NumberAnimation { target: lost; property: "font.pointSize"; from: 1.; to: 60.0; duration: 1000}
+
+                }
+            }
+        }
+
     }
 
     onGameStateChanged: {

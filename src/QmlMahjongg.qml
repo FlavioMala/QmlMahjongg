@@ -44,6 +44,14 @@ ApplicationWindow {
                 Logic.createBoard()
             }
         }
+//        Button {
+//            id: test
+//            text: "Test"
+//            onClicked: {
+//                gameBoard.gameState=(gameBoard.gameState+1)%3
+//            }
+//        }
+
         Rectangle {
             color: "green"
             GameBoard {

@@ -18,6 +18,7 @@ Rectangle {
     x:xPos*width/2+zPos*33/3+33/3
     y:yPos*height/2+zPos*33/3+33/3
     color:"transparent"
+    visible: true
 
     Image {
         id: bevel
@@ -61,6 +62,10 @@ Rectangle {
         pieceImage.source="gamepieces/"+pieceId+".png"
     }
 
+    onVisibleChanged: {
+        console.log("Changed")
+    }
+
     onIsRemovedChanged: {
         if (isRemoved) {
             visible=false
@@ -70,6 +75,7 @@ Rectangle {
     }
 
     MouseArea {
+        id: mouse
         anchors.fill: parent
         onClicked: {
             parent.clicked(number)
