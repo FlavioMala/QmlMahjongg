@@ -35,12 +35,17 @@ ApplicationWindow {
             }
         }
         Rectangle {
+            color: "green"
             GameBoard {
                 id: gameBoard
                 anchors.centerIn: parent
             }
-            implicitHeight: gameBoard.implicitHeight
-            implicitWidth: gameBoard.implicitWidth
+            Layout.minimumWidth: gameBoard.implicitWidth
+            Layout.minimumHeight: gameBoard.implicitHeight
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            //implicitHeight: gameBoard.implicitHeight
+            //implicitWidth: gameBoard.implicitWidth
         }
 
 

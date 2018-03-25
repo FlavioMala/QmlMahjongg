@@ -3,8 +3,8 @@ import QtQuick 2.0
 Rectangle {
     color: "#008000"
     visible: true
-    implicitWidth: 240/3*30
-    implicitHeight: 330/3*16
+    implicitWidth: 240/3*15+20
+    implicitHeight: 330/3*8+20
 
     property int gameState:0
 
