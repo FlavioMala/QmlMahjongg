@@ -19,9 +19,7 @@ There is none
 
 ## Authors
 
-* **Frank Simon (mailto:frank100880@gmail.com)** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Frank Simon (mailto:frank100880@gmail.com)** - *Initial work* 
 
 ## License
 
