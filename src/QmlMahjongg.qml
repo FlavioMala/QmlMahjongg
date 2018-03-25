@@ -6,7 +6,10 @@ import "GameLogic.js" as Logic
 ApplicationWindow {
     id: appWindow
     title: "Mahjongg"
+    width: layout.implicitWidth
+    height: layout.implicitHeight
 
+    //@bug Is not displayed? Why?
     menuBar: MenuBar {
         Menu {
             title: "File"
@@ -28,17 +31,20 @@ ApplicationWindow {
             id: newGame
             text: "New Game"
             onClicked: {
+                console.log(gameBoard.centeredGame)
                 Logic.createBoard(gameBoard)
             }
         }
-
-        GameBoard {
-            id: gameBoard
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+        Rectangle {
+            GameBoard {
+                id: gameBoard
+                anchors.centerIn: parent
+            }
+            implicitHeight: gameBoard.implicitHeight
+            implicitWidth: gameBoard.implicitWidth
         }
 
+
     }
-    width: 600
-    height: 800
+
 }

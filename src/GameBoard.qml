@@ -2,18 +2,21 @@ import QtQuick 2.0
 
 Rectangle {
     color: "#008000"
-    width: 800
-    height: 800
+    implicitWidth: 240/3*30
+    implicitHeight: 330/3*16
+
     property int gameState:0
 
     Text {
         id: won
+        anchors.fill:parent
         visible: false
         text: "Congratulations"
     }
 
     Text {
         id: lost
+        anchors.fill:parent
         visible: false
         text: "You lost"
     }
