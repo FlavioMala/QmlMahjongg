@@ -149,7 +149,6 @@ function createIds() {
 function createBoard(container) {
     gameConfig=[]
     var randomIds=shuffle(createIds())
-    console.log(randomIds)
     readBoard(randomIds)
     for (var index in gameConfig) {
         var gamePiece=addPiece(container,index)
