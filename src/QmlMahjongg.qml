@@ -31,7 +31,8 @@ ApplicationWindow {
             id: newGame
             text: "New Game"
             onClicked: {
-                Logic.createBoard(gameBoard)
+                Logic.initGamePieces(gameBoard)
+                Logic.createBoard()
             }
         }
         Rectangle {

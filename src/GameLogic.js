@@ -103,6 +103,18 @@ var gameConfig=[/*
 */
         ]
 
+var gamepieces=[]
+
+// Must be called only once
+function initGamePieces(container) {
+    if (gamepieces.length>0) return
+    for (var i=0; i<144; i++) {
+        var gamePiece=createGamePiece(container)
+        gamepieces.push(gamePiece)
+        gamePiece.clicked.connect(gamePieceClicked)
+    }
+}
+
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -130,7 +142,16 @@ function readBoard(ids) {
             for (var c=0; c<defaultBoard.w; c++) {
                 var index=r*defaultBoard.w+c
                 if (str[index]==='1') {
-                    gameConfig.push({x:c, y:r, z:d, piece:ids[idIndex],gamepiece:null, isRemoved:false})
+                    //{"xPos":piece.x,"yPos":piece.y,"zPos":piece.z,"pieceId":piece.piece, "isRemoved":piece.isRemoved, "number":index}
+                    var pieceConfig={x:c, y:r, z:d, piece:ids[idIndex],gamepiece:gamepieces[idIndex], isRemoved:false};
+                    gamepieces[idIndex].xPos=pieceConfig.x
+                    gamepieces[idIndex].yPos=pieceConfig.y
+                    gamepieces[idIndex].zPos=pieceConfig.z
+                    gamepieces[idIndex].pieceId=pieceConfig.piece
+                    gamepieces[idIndex].isRemoved=pieceConfig.isRemoved
+                    gamepieces[idIndex].number=idIndex
+
+                    gameConfig.push(pieceConfig)
                     idIndex++
                 }
             }
@@ -150,12 +171,7 @@ function createBoard(container) {
     gameConfig=[]
     var randomIds=shuffle(createIds())
     readBoard(randomIds)
-    for (var index in gameConfig) {
-        var gamePiece=addPiece(container,index)
-        gameConfig[index].gamepiece=gamePiece
-        gamePiece.clicked.connect(gamePieceClicked)
-        //console.log(gamePiece.xPos)
-    }
+
 }
 
 var previousSelectedPiece=-1
@@ -253,10 +269,17 @@ function gamePieceClicked(index) {
     console.log("IsSelectable")
 }
 
-function addPiece(container, index) {
-    var piece=gameConfig[index]
+//function addPiece(container, index) {
+//    var piece=gameConfig[index]
+//    var component = Qt.createComponent("GamePiece.qml");
+//    if (component.status == Component.Ready) {
+//        return component.createObject(container,{"xPos":piece.x,"yPos":piece.y,"zPos":piece.z,"pieceId":piece.piece, "isRemoved":piece.isRemoved, "number":index});
+//    }
+//}
+
+function createGamePiece(container) {
     var component = Qt.createComponent("GamePiece.qml");
     if (component.status == Component.Ready) {
-        return component.createObject(container,{"xPos":piece.x,"yPos":piece.y,"zPos":piece.z,"pieceId":piece.piece, "isRemoved":piece.isRemoved, "number":index});
+        return component.createObject(container);
     }
 }
