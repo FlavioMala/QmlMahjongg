@@ -10,7 +10,7 @@ ApplicationWindow {
     height: layout.implicitHeight
 
     //@bug Menu is not displayed? Why?
-    menuBar: MenuBar {
+    MenuBar {
         Menu {
             title: "File"
             MenuItem {
@@ -21,6 +21,15 @@ ApplicationWindow {
             MenuItem {
                 text: "Quit"
                 onTriggered: appWindow.close();
+            }
+        }
+        Menu {
+            title: "About"
+            MenuItem {
+                text: "About"
+                onTriggered: {
+
+                }
             }
         }
     }
