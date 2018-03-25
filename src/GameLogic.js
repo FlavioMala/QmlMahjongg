@@ -111,6 +111,7 @@ function initGamePieces(container) {
     for (var i=0; i<144; i++) {
         var gamePiece=createGamePiece(container)
         gamepieces.push(gamePiece)
+        //console.log(gamePiece)
         gamePiece.clicked.connect(gamePieceClicked)
     }
 }
@@ -182,7 +183,7 @@ function blockedByAdjacentPieces(index) {
     var hasLeft=nonRemoved.filter(  function(gamePiece) { return gamePiece.x===myPiece.x-2 && gamePiece.z===myPiece.z }).length>0
     var hasRight=nonRemoved.filter( function(gamePiece) { return gamePiece.x===myPiece.x+2 && gamePiece.z===myPiece.z }).length>0
     var hasOnTop=nonRemoved.filter( function(gamePiece) { return gamePiece.z>myPiece.z && Math.abs(gamePiece.x-myPiece.x)<=1; }).length>0
-    console.log(hasLeft,hasRight,hasOnTop)
+   // console.log(hasLeft,hasRight,hasOnTop)
     if (hasOnTop) return true
     if (hasLeft && hasRight) return true
     return false
@@ -269,17 +270,7 @@ function gamePieceClicked(index) {
     console.log("IsSelectable")
 }
 
-//function addPiece(container, index) {
-//    var piece=gameConfig[index]
-//    var component = Qt.createComponent("GamePiece.qml");
-//    if (component.status == Component.Ready) {
-//        return component.createObject(container,{"xPos":piece.x,"yPos":piece.y,"zPos":piece.z,"pieceId":piece.piece, "isRemoved":piece.isRemoved, "number":index});
-//    }
-//}
-
 function createGamePiece(container) {
     var component = Qt.createComponent("GamePiece.qml");
-    if (component.status == Component.Ready) {
-        return component.createObject(container);
-    }
+    return component.createObject(container);
 }
