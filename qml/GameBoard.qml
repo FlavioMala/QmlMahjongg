@@ -1,13 +1,13 @@
 import QtQuick 2.0
 
 Rectangle {
-    color: "#008000"
+
     visible: true
-    implicitWidth: 240/3*15+20
-    implicitHeight: 330/3*8+20
-
+    implicitWidth: 1080
+    implicitHeight: 900
+color: "transparent"
     property int gameState:0        
-
+   
     Text {
         id: won
         anchors.centerIn:parent

@@ -1,0 +1,16 @@
+{
+    "name": "qmlmahjongg",
+    "description": "description of Amp",
+    "architecture": "all",
+    "title": "qmlmahjongg.mateo-salta",
+    "hooks": {
+        "qmlmahjongg": {
+            "apparmor": "qmlmahjongg.apparmor",
+            "desktop":  "qmlmahjongg.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": "Mateo Salta <mateo_salta@yahoo.com>",
+    "framework" : "ubuntu-sdk-16.04"
+}
+
