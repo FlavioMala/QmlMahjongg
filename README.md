@@ -1,18 +1,7 @@
 # QmlMahjongg
 Simple Mahjongg just using QtQuick
 
-## Getting Started
-
-Just start the program by opening it using QtCreator
-
-### Prerequisites
-
-You need Qt Creator and Qt 5.10.0 beforehand
-
-### Installing
-
-There is none
-
+<a href="https://open-store.io/app/qmlmahjongg.mateo-salta"><img src="https://open-store.io/badges/en_US.png" alt="OpenStore" /></a>
 ## Built With
 
 * [Qt](https://www.qt.io/) - The Qt framework
@@ -20,6 +9,8 @@ There is none
 ## Authors
 
 * **Frank Simon (mailto:frank100880@gmail.com)** - *Initial work* 
+* **Mateo Salta ** - *Ubuntu touch port* 
+
 
 ## License
 
