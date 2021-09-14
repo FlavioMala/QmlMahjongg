@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=qmlmahjongg
 Exec=qmlscene qml/QmlMahjongg.qml
-Icon=qml/gamepieces/icon.png #Icon=assets/logo.svg
+Icon=qml/gamepieces/icon.png
+# Precedente: Icon=assets/logo.svg
 Terminal=false
 Type=Application
 X-Ubuntu-Touch=true
