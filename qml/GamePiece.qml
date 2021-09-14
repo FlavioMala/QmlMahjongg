@@ -12,8 +12,11 @@ Rectangle {
 
     signal clicked(int number)
 
-    width: 210/3
-    height: 300/3
+    width: 210/3.6
+    height: 300/3.6
+    //originali:
+    //width: 210/3
+    //height: 300/3
     z:zPos*10000000-1000*xPos-yPos+10000000000
     x:xPos*width/2+zPos*33/3+33/3
     y:yPos*height/2+zPos*33/3+33/3
@@ -35,10 +38,12 @@ Rectangle {
         source:"gamepieces/Bevel.png"
         antialiasing:  true
         smooth: true
-        height: sourceSize.height/3.4
+        height: sourceSize.height/3.9
+        //originale: height: sourceSize.height/3.4
         x:-33/3
         y:-33/3
-        width: sourceSize.width/3.4
+        width: sourceSize.width/3.9
+        //originale: width: sourceSize.width/3.4
     }
     Colorize {
         visible: isSelected
